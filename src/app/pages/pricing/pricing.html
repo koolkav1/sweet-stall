@@ -1,0 +1,236 @@
+<div class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-tertiary-container selection:text-on-tertiary-container">
+  <!-- TopNavBar -->
+  <nav class="bg-stone-50/90 backdrop-blur-md w-full top-0 sticky z-50 border-b border-stone-200/60 shadow-sm shadow-amber-900/5">
+    <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+      <!-- Brand -->
+      <a class="text-2xl font-serif italic text-amber-700 font-headline-md tracking-tight" href="#">Sugar &amp; Sage</a>
+
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex items-center gap-8 font-serif text-stone-800">
+        <li><a class="text-stone-600 hover:text-amber-500 text-label-md transition-colors duration-300" href="#">Home</a></li>
+        <li><a class="text-stone-600 hover:text-amber-500 text-label-md transition-colors duration-300" href="#">About</a></li>
+        <li><a class="text-amber-700 font-semibold border-b-2 border-amber-600 pb-1 text-label-md hover:text-amber-600 transition-colors duration-300" href="#">Pricing</a></li>
+        <li><a class="text-stone-600 hover:text-amber-500 text-label-md transition-colors duration-300" href="#">FAQ</a></li>
+        <li><a class="text-stone-600 hover:text-amber-500 text-label-md transition-colors duration-300" href="#">Testimonials</a></li>
+        <li><a class="text-stone-600 hover:text-amber-500 text-label-md transition-colors duration-300" href="#">Contact</a></li>
+      </ul>
+
+      <!-- Trailing Action -->
+      <div class="hidden md:block">
+        <a class="inline-flex items-center justify-center px-6 py-3 bg-tertiary text-on-tertiary font-button text-button rounded-full hover:shadow-[0_8px_20px_rgba(152,165,138,0.2)] transition-all duration-300" href="#">Book Now</a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="md:hidden text-primary p-2 focus:outline-none" aria-label="Open menu">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <!-- Page Header -->
+    <section class="bg-surface-container-lowest py-xl px-md text-center border-b border-surface-variant">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="font-display-lg text-display-lg text-on-surface mb-sm">Curated Sweet Experiences</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">
+          Transparent, elegant pricing designed to fit celebrations of every scale. Choose a package to anchor your event with our signature joy.
+        </p>
+      </div>
+    </section>
+
+    <!-- Pricing Grid -->
+    <section class="max-w-container-max mx-auto px-md py-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+        <!-- Bronze Package -->
+        <div class="bg-surface-bright rounded-xl border border-secondary/20 p-8 flex flex-col shadow-[0_10px_40px_-10px_rgba(152,165,138,0.15)] transition-transform duration-300 hover:-translate-y-1">
+          <div class="mb-6">
+            <h3 class="font-headline-md text-headline-md text-tertiary mb-xs">Bronze</h3>
+            <div class="flex items-baseline gap-1 mb-2">
+              <span class="font-display-lg text-display-lg text-on-surface">$550</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant h-12">An elegant touch for intimate gatherings and small celebrations.</p>
+          </div>
+          <div class="h-px w-full bg-outline-variant/30 mb-6"></div>
+          <ul class="flex flex-col gap-4 mb-8 flex-grow">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-secondary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">Standard White Sweet Cart</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-secondary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">3 Signature Sweet Selections</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-secondary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">Glass Apothecary Jars</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-secondary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">Serves up to 50 Guests</span>
+            </li>
+            <li class="flex items-start gap-3 opacity-40">
+              <span class="material-symbols-outlined text-outline text-[20px] mt-0.5">close</span>
+              <span class="font-body-md text-body-md text-on-surface-variant">Attendant Staff</span>
+            </li>
+          </ul>
+          <button class="w-full py-3 px-6 rounded-full border border-secondary text-secondary font-button text-button hover:bg-secondary/5 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary/50">
+            Inquire Now
+          </button>
+        </div>
+
+        <!-- Silver Package -->
+        <div class="bg-surface-bright rounded-xl border border-secondary/20 p-8 flex flex-col shadow-[0_10px_40px_-10px_rgba(152,165,138,0.15)] transition-transform duration-300 hover:-translate-y-1">
+          <div class="mb-6">
+            <h3 class="font-headline-md text-headline-md text-tertiary mb-xs">Silver</h3>
+            <div class="flex items-baseline gap-1 mb-2">
+              <span class="font-display-lg text-display-lg text-on-surface">$850</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant h-12">The perfect balance of variety and service for standard receptions.</p>
+          </div>
+          <div class="h-px w-full bg-outline-variant/30 mb-6"></div>
+          <ul class="flex flex-col gap-4 mb-8 flex-grow">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-secondary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">Choice of Classic or Rustic Cart</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-secondary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">5 Signature Sweet Selections</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-secondary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">Custom Ribbon Decor &amp; Tongs</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-secondary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">Serves up to 100 Guests</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-secondary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">2 Hours Attendant Staff</span>
+            </li>
+          </ul>
+          <button class="w-full py-3 px-6 rounded-full border border-secondary text-secondary font-button text-button hover:bg-secondary/5 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary/50">
+            Inquire Now
+          </button>
+        </div>
+
+        <!-- Gold Package (Featured) -->
+        <div class="bg-surface rounded-xl border border-tertiary/30 p-8 flex flex-col shadow-[0_10px_40px_-10px_rgba(152,165,138,0.15)] relative md:-translate-y-4 transition-transform duration-300">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-tertiary text-on-tertiary px-4 py-1 rounded-full font-label-md text-label-md shadow-sm">
+            Most Popular
+          </div>
+          <div class="mb-6 mt-2">
+            <h3 class="font-headline-md text-headline-md text-tertiary mb-xs">Gold</h3>
+            <div class="flex items-baseline gap-1 mb-2">
+              <span class="font-display-lg text-display-lg text-on-surface">$1,450</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant h-12">A premium, fully-staffed experience with exquisite custom details.</p>
+          </div>
+          <div class="h-px w-full bg-tertiary/20 mb-6"></div>
+          <ul class="flex flex-col gap-4 mb-8 flex-grow">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-tertiary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">Any Premium Cart or Display Table</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-tertiary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">7 Sweet Selections (inc. Artisanal)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-tertiary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">Custom Floral Cart Arrangement</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-tertiary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">Serves up to 200 Guests</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-tertiary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">4 Hours Attendant Staff</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-tertiary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">Personalized Favor Bags</span>
+            </li>
+          </ul>
+          <button class="w-full py-3 px-6 rounded-full bg-tertiary text-on-tertiary font-button text-button hover:bg-tertiary/90 shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-tertiary/50 focus:ring-offset-2">
+            Reserve Package
+          </button>
+        </div>
+
+        <!-- Platinum Package -->
+        <div class="bg-surface-bright rounded-xl border border-secondary/20 p-8 flex flex-col shadow-[0_10px_40px_-10px_rgba(152,165,138,0.15)] transition-transform duration-300 hover:-translate-y-1">
+          <div class="mb-6">
+            <h3 class="font-headline-md text-headline-md text-tertiary mb-xs">Platinum</h3>
+            <div class="flex items-baseline gap-1 mb-2">
+              <span class="font-display-lg text-display-lg text-on-surface">$2,200</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant h-12">The ultimate bespoke confectionery installation for grand events.</p>
+          </div>
+          <div class="h-px w-full bg-outline-variant/30 mb-6"></div>
+          <ul class="flex flex-col gap-4 mb-8 flex-grow">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-secondary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">Multiple Carts or Grand Wall Display</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-secondary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">10+ Sweet Selections &amp; Custom Cakes</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-secondary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">Full Thematic Set Design</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-secondary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">Serves 250+ Guests</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-secondary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">Full Duration Event Staffing</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined icon-fill text-secondary text-[20px] mt-0.5">check_circle</span>
+              <span class="font-body-md text-body-md text-on-surface">Custom Branded Confectionery</span>
+            </li>
+          </ul>
+          <button class="w-full py-3 px-6 rounded-full border border-secondary text-secondary font-button text-button hover:bg-secondary/5 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary/50">
+            Request Consultation
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add-ons Callout -->
+    <section class="max-w-4xl mx-auto px-md pb-xl pt-8 text-center">
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+        Need something specific? We offer a la carte options including custom backdrops, specialized dietary menus, and midnight snack services.
+      </p>
+      <button class="inline-flex items-center gap-2 text-tertiary font-button text-button hover:underline decoration-tertiary/50 underline-offset-4">
+        View A La Carte Menu <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </button>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-stone-100 w-full border-t mt-20 border-stone-200">
+    <div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 max-w-7xl mx-auto gap-6">
+      <!-- Brand -->
+      <div class="font-serif text-lg text-stone-800">Sugar &amp; Sage</div>
+
+      <!-- Links -->
+      <div class="flex flex-wrap justify-center gap-6">
+        <a class="font-sans text-sm text-stone-500 hover:text-stone-800 underline decoration-amber-200 underline-offset-4 transition-colors" href="#">Privacy Policy</a>
+        <a class="font-sans text-sm text-stone-500 hover:text-stone-800 underline decoration-amber-200 underline-offset-4 transition-colors" href="#">Terms of Service</a>
+        <a class="font-sans text-sm text-stone-500 hover:text-stone-800 underline decoration-amber-200 underline-offset-4 transition-colors" href="#">Shipping &amp; Returns</a>
+        <a class="font-sans text-sm text-stone-500 hover:text-stone-800 underline decoration-amber-200 underline-offset-4 transition-colors" href="#">Instagram</a>
+        <a class="font-sans text-sm text-stone-500 hover:text-stone-800 underline decoration-amber-200 underline-offset-4 transition-colors" href="#">Pinterest</a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="font-sans text-sm text-stone-500 text-center md:text-right">© 2024 Sugar &amp; Sage Wedding Confectionery. Crafted with Love.</div>
+    </div>
+  </footer>
+</div>

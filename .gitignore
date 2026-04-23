@@ -44,5 +44,6 @@ Thumbs.db
 .claude/settings.local.json
 
 .angular
+.env
 
 __screenshots__/

@@ -7,9 +7,16 @@
   "sourceRoot": "./src",
   "tags": [],
   "targets": {
+    "set-env": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/set-env.mjs"
+      }
+    },
     "build": {
       "executor": "@angular/build:application",
       "outputs": ["{options.outputPath}"],
+      "dependsOn": ["set-env"],
       "options": {
         "outputPath": "dist/sweet-stall",
         "browser": "./src/main.ts",
@@ -50,6 +57,7 @@
     "serve": {
       "continuous": true,
       "executor": "@angular/build:dev-server",
+      "dependsOn": ["set-env"],
       "configurations": {
         "production": {
           "buildTarget": "sweet-stall:build:production"

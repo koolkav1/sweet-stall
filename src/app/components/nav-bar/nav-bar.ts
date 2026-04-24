@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { SiteService } from '../../services/site.service';
 import { Icon } from '../icon/icon';
@@ -16,4 +16,13 @@ export class NavBar {
   protected readonly linkInactive = 'text-stone-600 hover:text-amber-500';
   routes = this.siteService.routes;
 
+  menuOpen = signal(false);
+
+  toggleMenu() {
+    this.menuOpen.update(v => !v);
+  }
+
+  closeMenu() {
+    this.menuOpen.set(false);
+  }
 }

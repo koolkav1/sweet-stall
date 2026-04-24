@@ -1,7 +1,7 @@
-<nav class="bg-stone-50/90 backdrop-blur-md w-full top-0 sticky z-50 border-b border-stone-200/60 shadow-sm shadow-amber-900/5">
+<nav class="bg-stone-50/90 backdrop-blur-md w-full top-0 sticky z-50 border-b border-stone-200/60 shadow-sm shadow-amber-900/5 relative">
   <div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
     <!-- Brand -->
-    <a routerLink="/sweet-cart-goodies-hull" class="text-2xl font-serif italic text-amber-700 font-headline-md tracking-tight">Gumball  &amp; Goodieshire</a>
+    <a routerLink="/sweet-cart-goodies-hull" (click)="closeMenu()" class="text-2xl font-serif italic text-amber-700 font-headline-md tracking-tight">Gumball  &amp; Goodieshire</a>
 
     <!-- Desktop Navigation -->
     <ul class="hidden md:flex items-center gap-8 font-serif text-stone-800">
@@ -21,8 +21,33 @@
     </div>
 
     <!-- Mobile Menu Toggle -->
-    <button class="md:hidden text-primary p-2 focus:outline-none" aria-label="Open menu">
-      <app-icon name="menu" />
+    <button class="md:hidden text-primary p-2 focus:outline-none"
+            [attr.aria-label]="menuOpen() ? 'Close menu' : 'Open menu'"
+            [attr.aria-expanded]="menuOpen()"
+            (click)="toggleMenu()">
+      <app-icon [name]="menuOpen() ? 'close' : 'menu'" />
     </button>
   </div>
+
+  <!-- Mobile Drawer -->
+  @if (menuOpen()) {
+    <div class="md:hidden absolute top-full left-0 right-0 bg-stone-50/95 backdrop-blur-md border-b border-stone-200/60 shadow-lg shadow-amber-900/10">
+      <ul class="flex flex-col font-serif text-stone-800 px-8 pt-6 pb-4 gap-1">
+        @for (route of routes; track route.path) {
+          <li>
+            <a [routerLink]="'/' + route.path"
+               routerLinkActive
+               #rla="routerLinkActive"
+               [class]="'block py-3 border-b border-stone-100 ' + linkBase + ' ' + (rla.isActive ? linkActive : linkInactive)"
+               (click)="closeMenu()">{{ route.label }}</a>
+          </li>
+        }
+      </ul>
+      <div class="px-8 pb-6">
+        <a routerLink="/contact-goodies-sweet-cart-hull"
+           (click)="closeMenu()"
+           class="inline-flex items-center justify-center w-full px-6 py-3 bg-tertiary text-on-tertiary font-button text-button rounded-full hover:shadow-[0_8px_20px_rgba(152,165,138,0.2)] transition-all duration-300">Book Now</a>
+      </div>
+    </div>
+  }
 </nav>

@@ -8,5 +8,6 @@ export class ImageService {
         'https://storage.googleapis.com/candy-cart.firebasestorage.app/images%2FIMG_20260423_195232.webp',
         'https://storage.googleapis.com/candy-cart.firebasestorage.app/images%2FIMG_20260423_200406.webp',
         'https://storage.googleapis.com/candy-cart.firebasestorage.app/images%2FIMG_20260423_200508.webp',
+        'https://storage.googleapis.com/candy-cart.firebasestorage.app/images%2Flogo.webp',
     ];
 }

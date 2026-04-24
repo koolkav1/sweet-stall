@@ -5,7 +5,10 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "compress-images": "tsx scripts/compress-images.ts",
+    "upload-images": "tsx scripts/upload-images.ts",
+    "sync-images": "npm run compress-images && npm run upload-images"
   },
   "private": true,
   "dependencies": {
@@ -43,14 +46,18 @@
     "autoprefixer": "^10.5.0",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^10.0.0",
+    "firebase-admin": "^12.7.0",
     "jsdom": "^27.1.0",
     "nx": "22.6.5",
     "postcss": "^8.5.10",
     "prettier": "~3.6.2",
+    "sharp": "^0.33.5",
     "tailwindcss": "^4.2.4",
     "tslib": "^2.3.0",
+    "tsx": "^4.21.0",
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.40.0",
+    "vite": "^8.0.10",
     "vitest": "^4.0.8"
   },
   "nx": {

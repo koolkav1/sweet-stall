@@ -1,5 +1,67 @@
 # SweetStall
 
+## Initial setup
+
+```
+npm run install
+```
+## Firebase setup
+
+we need to set up hosting and storage for the project,
+
+go to [Firebase Console](https://console.firebase.google.com/) create and account, signin and set up the pay as you go Blaze account. 5GB of store is free and 1GB can be downloaded per day, images are intelligently cached so the user should not be downloading the same image again anytime soon so this keeps things light.
+
+360MB data transfer per day is free, the Angular app at the time of writing is 400kb in size, therefore 900 unique visitors can access the site for free per day, if they try to access the site again, they will receive a stored version that doesn't hit the main server. 
+
+Create a new project ie gumball-goodieshire
+
+update .firebaserc and change candy-cart to gumball-goodieshire
+
+```
+firebase init
+```
+
+
+## Image sync
+
+Drop source images (JPEG, PNG, etc.) into the `images/` folder, then run:
+
+```sh
+npm run sync-images
+```
+
+This does two things in sequence:
+
+1. **Compress** — converts every image in `images/` to WebP (quality 85) and writes the result to `images/compressed/`. Files that already exist there are skipped, so re-running is safe.
+2. **Upload** — uploads every WebP from `images/compressed/` to Firebase Storage and regenerates `src/app/services/image.service.ts` with an array of the public CDN URLs. Files already present in the bucket are also skipped.
+
+You can run either step alone:
+
+```sh
+npm run compress-images   # compress only
+npm run upload-images     # upload + regenerate service only
+```
+
+### One-time setup
+
+Add the following to your `.env` (create it in the project root if it doesn't exist):
+
+```env
+FIREBASE_STORAGE_BUCKET=candy-cart.firebasestorage.app
+```
+
+Then provide Firebase credentials using **one** of these options:
+
+| Option | How |
+|---|---|
+| Service account file | Download a key from Firebase Console → Project Settings → Service Accounts → Generate new private key. Save it as `service-account.json` in the project root. |
+| Environment variable | Set `GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/key.json` in `.env`. |
+| Application Default Credentials | Run `gcloud auth application-default login` once. |
+
+`service-account.json` is already in `.gitignore` — never commit it.
+
+---
+
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
 ✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.

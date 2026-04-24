@@ -51,3 +51,11 @@ Thumbs.db
 /src/environments/
 
 __screenshots__/
+
+# Firebase service account key — never commit
+service-account.json
+
+# Compressed images are generated build artefacts
+images/compressed/
+
+

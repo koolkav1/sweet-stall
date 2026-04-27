@@ -42,7 +42,7 @@
             <img
               alt="Close-up of a rustic elegant sweet cart shelf featuring tiered trays of delicate pastries, soft pink roses, and vintage silver servingware against a light cream background."
               class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB81hMEfwuPbt27uWfz_NJTmogQGKkA0noQvXZGoOMbp-dxqgjILEWrnXiF_TsHuifH-40nAZfsFOt9AG07e67BWQnfHW61qiK6tFlQQyUjtGRgyFUROYNxrcj6ImM9PRLSmqHdSuxK8bJaPVYnkHExneKxS647BPayQbvyp862KSGaFGnNScSMByESqyNuNdxF9nOjkNL3VIkVxh0sm_Twk0yVJbrngZUBqXuD2j2cuHzJuwv569X05br7lmeAcy2xDr7tMxtW2Yc"
+              [src]="images.images['IMG_20260423_195232.webp']"
             />
             <!-- Elegant border overlay -->
             <div class="absolute inset-4 border border-surface-bright/40 rounded-[1.5rem] pointer-events-none"></div>
@@ -50,7 +50,7 @@
         </div>
 
         <div class="w-full md:w-1/2 space-y-md">
-          <h2 class="font-headline-lg text-headline-lg text-on-surface">The Art of the Sweet Cart</h2>
+          <h2 class="font-headline-lg text-headline-lg text-on-surface">The Art of the Goodies Gumball</h2>
           <p class="font-body-md text-body-md text-on-surface-variant">
             At Gumball  &amp; Goodieshire, we believe that the dessert experience should be as breathtaking as the venue itself. We don't just provide treats; we design a focal point of professional joy and tactile delight.
           </p>
@@ -102,14 +102,14 @@
             <img
               alt="Expansive view of a grand wedding sweet cart overflowing with a cascading floral arrangement, a central tiered wedding cake, and numerous glass jars filled with pastel candies."
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFsIXTWStm7btcao3SQmrIdrOY5q4_HR67I_SDvr-_EPITXFvp5L0Xc7LQOSphok64tJSmdhswto0uNF8vpSHBZXpIpLdb9Yejzo42-V-TJ2iMtX6LF_XGhkP8IPCOImpwv8cEOxJR-nzTKHosgo5Mh8S_dG2aXjv_Kw-340FLKW0tI39ZljxJDJESzxw63y3aUCXanvdckxuqIjp7YGm-0pyjNUJpZXZeuv7a5pW7I1UOteFm8KpxFiWaxfVHMpimi_0XoCtSA_k"
+              [src]="images.images['IMG_20260423_200406.webp']"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/30 to-transparent"></div>
             <div class="relative z-10">
               <div class="inline-flex px-3 py-1 bg-surface-bright/20 backdrop-blur-md rounded-full border border-surface-bright/30 mb-sm">
                 <span class="font-label-md text-label-md text-surface-bright">Signature Package</span>
               </div>
-              <h3 class="font-headline-md text-headline-md text-surface-bright mb-xs">The Grand Cart</h3>
+              <h3 class="font-headline-md text-headline-md text-surface-bright mb-xs">The Gold Package</h3>
               <p class="font-body-md text-body-md text-surface-variant max-w-[28rem]">Our most luxurious offering, featuring a full canopy, custom floral draping, and a lavish selection of 10 artisan desserts tailored to your palette.</p>
             </div>
           </div>
@@ -121,7 +121,7 @@
             </div>
             <h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Flavor Menus</h3>
             <p class="font-body-md text-body-md text-on-surface-variant flex-grow">Curated flavor profiles ranging from Classic Vanilla Bean to exotic Earl Grey &amp; Lavender.</p>
-            <a class="font-label-md text-label-md text-tertiary flex items-center gap-xs mt-sm group-hover:text-primary transition-colors" href="#">
+            <a [routerLink]="'/sweet-cart-hull-pricing'" class="font-label-md text-label-md text-tertiary flex items-center gap-xs mt-sm group-hover:text-primary transition-colors" href="#">
               Explore Menus <app-icon name="arrow_forward" class="text-sm" />
             </a>
           </div>

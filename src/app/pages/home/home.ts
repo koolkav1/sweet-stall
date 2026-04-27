@@ -12,6 +12,8 @@ import {
   Web3FormsResponse,
 } from '../../services/contact.service';
 import { Icon } from '../../components/icon/icon';
+import { ImageService } from '../../services/image.service';
+import { RouterLink } from '@angular/router';
 
 interface CtaModel {
   name: string;
@@ -23,11 +25,12 @@ const EMPTY: CtaModel = { name: '', email: '', date: '' };
 
 @Component({
   selector: 'app-home',
-  imports: [FormField, Icon],
+  imports: [FormField, Icon, RouterLink],
   templateUrl: './home.html',
 })
 export class Home {
   private readonly contact = inject(ContactService);
+  readonly images = inject(ImageService);
 
   protected readonly model = signal<CtaModel>({ ...EMPTY });
   protected readonly ctaForm = form(this.model, (path) => {

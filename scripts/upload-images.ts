@@ -37,16 +37,19 @@ function buildCredential(): admin.credential.Credential {
     );
 }
 
-function generateService(urls: string[]): string {
-    const list = urls.map((u) => `        '${u}'`).join(',\n');
+function generateService(entries: { file: string; url: string }[]): string {
+    const lines = entries.map(({ file, url }) => {
+        const padding = ' '.repeat(Math.max(0, 30 - file.length));
+        return `        '${file}':${padding}'${url}'`;
+    }).join(',\n');
     return (
         `import { Injectable } from '@angular/core';\n` +
         `\n` +
         `@Injectable({ providedIn: 'root' })\n` +
         `export class ImageService {\n` +
-        `    images: string[] = [\n` +
-        `${list},\n` +
-        `    ];\n` +
+        `    images: Record<string, string> = {\n` +
+        `${lines},\n` +
+        `    };\n` +
         `}\n`
     );
 }
@@ -69,7 +72,7 @@ async function main(): Promise<void> {
         return;
     }
 
-    const urls: string[] = [];
+    const entries: { file: string; url: string }[] = [];
 
     for (const file of files) {
         const destination = `images/${file}`;
@@ -78,7 +81,7 @@ async function main(): Promise<void> {
         const [exists] = await remoteFile.exists();
         if (exists) {
             console.log(`skip  ${file} (already in Storage)`);
-            urls.push(remoteFile.publicUrl());
+            entries.push({ file, url: remoteFile.publicUrl() });
             continue;
         }
 
@@ -89,13 +92,13 @@ async function main(): Promise<void> {
         });
         await uploaded.makePublic();
         const url = uploaded.publicUrl();
-        urls.push(url);
+        entries.push({ file, url });
         console.log(`done  ${file}`);
         console.log(`      ${url}`);
     }
 
-    fs.writeFileSync(SERVICE_TS_PATH, generateService(urls), 'utf-8');
-    console.log(`\nGenerated src/app/services/image.service.ts (${urls.length} images)`);
+    fs.writeFileSync(SERVICE_TS_PATH, generateService(entries), 'utf-8');
+    console.log(`\nGenerated src/app/services/image.service.ts (${entries.length} images)`);
 }
 
 main().catch((err: Error) => {

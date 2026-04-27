@@ -19,9 +19,14 @@ export const appRoutes: Route[] = [
     loadComponent: () => import('./pages/pricing/pricing').then(m => m.Pricing),
   },
   {
+    path: 'wedding-sweets-hull',
+    loadComponent: () => import('./pages/weddings/weddings').then(m => m.Weddings)
+  },
+  {
     path: 'contact-goodies-sweet-cart-hull',
     loadComponent: () => import('./pages/contact-us/contact-us').then(m => m.ContactUs)
   },
+  
   {
     path: '**',
     redirectTo: 'sweet-cart-goodies-hull'

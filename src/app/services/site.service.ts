@@ -8,5 +8,6 @@ export class SiteService {
         { label: 'Pricing', path: 'sweet-cart-hull-pricing' },
         { label: 'FAQ', path: 'faq-and-testimonials-goodies-sweet-cart-hull' },
         { label: 'Contact', path: 'contact-goodies-sweet-cart-hull' },
+        { label: 'Weddings', path: 'wedding-sweets-hull' },
     ];
 }

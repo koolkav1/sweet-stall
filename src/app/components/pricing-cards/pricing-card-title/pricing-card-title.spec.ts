@@ -13,6 +13,9 @@ describe('PricingCardTitle', () => {
     .compileComponents();
 
     fixture = TestBed.createComponent(PricingCardTitle);
+    fixture.componentRef.setInput('title', 'test-title');
+   fixture.componentRef.setInput('description', 'test-description');
+   fixture.componentRef.setInput('price', '£1');
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

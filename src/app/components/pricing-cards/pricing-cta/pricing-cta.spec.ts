@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Icon } from './icon';
+import { PricingCta } from './pricing-cta';
 
-describe('Icon', () => {
-  let component: Icon;
-  let fixture: ComponentFixture<Icon>;
+describe('PricingCta', () => {
+  let component: PricingCta;
+  let fixture: ComponentFixture<PricingCta>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Icon]
+      imports: [PricingCta]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Icon);
+    fixture = TestBed.createComponent(PricingCta);
     component = fixture.componentInstance;
-    fixture.componentRef.setInput('name', 'arrow_forward');
     await fixture.whenStable();
   });
 

@@ -1,0 +1,12 @@
+@let $featured = featured();
+
+<div [class]="$featured
+  ? 'bg-surface rounded-xl border border-tertiary/30 p-8 flex flex-col shadow-[0_10px_40px_-10px_rgba(152,165,138,0.15)] relative md:-translate-y-4 transition-transform duration-300'
+  : 'bg-surface-bright rounded-xl border border-secondary/20 p-8 flex flex-col shadow-[0_10px_40px_-10px_rgba(152,165,138,0.15)] transition-transform duration-300 hover:-translate-y-1'">
+  @if ($featured) {
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-tertiary text-on-tertiary px-4 py-1 rounded-full font-label-md text-label-md shadow-sm">
+      Most Popular
+    </div>
+  }
+  <ng-content />
+</div>

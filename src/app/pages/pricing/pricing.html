@@ -16,7 +16,39 @@
     <section class="max-w-container-max mx-auto px-md py-xl">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
         <!-- Bronze Package -->
-        <div class="bg-surface-bright rounded-xl border border-secondary/20 p-8 flex flex-col shadow-[0_10px_40px_-10px_rgba(152,165,138,0.15)] transition-transform duration-300 hover:-translate-y-1">
+         <app-pricing-card>
+          <app-pricing-card-title title="Bronze" price="£125" description="An elegant touch for intimate gatherings and small celebrations." />
+           <ul class="flex flex-col gap-4 mb-8 flex-grow">
+            <app-pricing-bullets>
+            1 - 50 Guests
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+            Sweets Included
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+            3 Vend Gumball Machines(=9 Large Jars)
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+            3 Additional Medium Sweet Jars 
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+           Sweet Bags 
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+           Tongs
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+           Decorations
+            </app-pricing-bullets>
+             <app-pricing-bullets [greyed]="true">
+           Option to Add Wedding Colour into Decorations
+            </app-pricing-bullets>
+           </ul>
+           <button class="w-full py-3 px-6 rounded-full border border-secondary text-secondary font-button text-button hover:bg-secondary/5 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary/50">
+            Inquire Now
+          </button>
+         </app-pricing-card>
+        <!-- <div class="bg-surface-bright rounded-xl border border-secondary/20 p-8 flex flex-col shadow-[0_10px_40px_-10px_rgba(152,165,138,0.15)] transition-transform duration-300 hover:-translate-y-1">
           <div class="mb-6">
             <h3 class="font-headline-md text-headline-md text-tertiary mb-xs">Bronze</h3>
             <div class="flex items-baseline gap-1 mb-2">
@@ -50,129 +82,112 @@
           <button class="w-full py-3 px-6 rounded-full border border-secondary text-secondary font-button text-button hover:bg-secondary/5 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary/50">
             Inquire Now
           </button>
-        </div>
+        </div> -->
 
         <!-- Silver Package -->
-        <div class="bg-surface-bright rounded-xl border border-secondary/20 p-8 flex flex-col shadow-[0_10px_40px_-10px_rgba(152,165,138,0.15)] transition-transform duration-300 hover:-translate-y-1">
-          <div class="mb-6">
-            <h3 class="font-headline-md text-headline-md text-tertiary mb-xs">Silver</h3>
-            <div class="flex items-baseline gap-1 mb-2">
-              <span class="font-display-lg text-display-lg text-on-surface">$850</span>
-            </div>
-            <p class="font-body-md text-body-md text-on-surface-variant h-12">The perfect balance of variety and service for standard receptions.</p>
-          </div>
-          <div class="h-px w-full bg-outline-variant/30 mb-6"></div>
-          <ul class="flex flex-col gap-4 mb-8 flex-grow">
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-secondary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">Choice of Classic or Rustic Cart</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-secondary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">5 Signature Sweet Selections</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-secondary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">Custom Ribbon Decor &amp; Tongs</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-secondary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">Serves up to 100 Guests</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-secondary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">2 Hours Attendant Staff</span>
-            </li>
-          </ul>
-          <button class="w-full py-3 px-6 rounded-full border border-secondary text-secondary font-button text-button hover:bg-secondary/5 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary/50">
+         <app-pricing-card>
+          <app-pricing-card-title title="Silver" price="£140" description="The perfect balance of variety and service for standard receptions." />
+           <ul class="flex flex-col gap-4 mb-8 flex-grow">
+            <app-pricing-bullets>
+            51 - 100 Guests
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+            Sweets Included
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+            3 Vend Gumball Machines(=9 Large Jars)
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+            3 Additional Large Sweet Jars 
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+           Sweet Bags 
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+           Tongs
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+           Decorations
+            </app-pricing-bullets>
+             <app-pricing-bullets>
+           Option to Add Wedding Colour into Decorations
+            </app-pricing-bullets>
+           </ul>
+           <button class="w-full py-3 px-6 rounded-full border border-secondary text-secondary font-button text-button hover:bg-secondary/5 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary/50">
             Inquire Now
           </button>
-        </div>
+         </app-pricing-card>
 
         <!-- Gold Package (Featured) -->
-        <div class="bg-surface rounded-xl border border-tertiary/30 p-8 flex flex-col shadow-[0_10px_40px_-10px_rgba(152,165,138,0.15)] relative md:-translate-y-4 transition-transform duration-300">
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-tertiary text-on-tertiary px-4 py-1 rounded-full font-label-md text-label-md shadow-sm">
-            Most Popular
-          </div>
-          <div class="mb-6 mt-2">
-            <h3 class="font-headline-md text-headline-md text-tertiary mb-xs">Gold</h3>
-            <div class="flex items-baseline gap-1 mb-2">
-              <span class="font-display-lg text-display-lg text-on-surface">$1,450</span>
-            </div>
-            <p class="font-body-md text-body-md text-on-surface-variant h-12">A premium, fully-staffed experience with exquisite custom details.</p>
-          </div>
-          <div class="h-px w-full bg-tertiary/20 mb-6"></div>
-          <ul class="flex flex-col gap-4 mb-8 flex-grow">
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-tertiary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">Any Premium Cart or Display Table</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-tertiary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">7 Sweet Selections (inc. Artisanal)</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-tertiary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">Custom Floral Cart Arrangement</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-tertiary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">Serves up to 200 Guests</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-tertiary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">4 Hours Attendant Staff</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-tertiary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">Personalized Favor Bags</span>
-            </li>
-          </ul>
-          <button class="w-full py-3 px-6 rounded-full bg-tertiary text-on-tertiary font-button text-button hover:bg-tertiary/90 shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-tertiary/50 focus:ring-offset-2">
+
+        <app-pricing-card [featured]="true">
+          <app-pricing-card-title [featured]="true" title="Gold" price="£155" description="A premium, fully-staffed experience with exquisite custom details." />
+           <ul class="flex flex-col gap-4 mb-8 flex-grow">
+            <app-pricing-bullets [featured]="true">
+            101 - 150 Guests
+            </app-pricing-bullets>
+            <app-pricing-bullets [featured]="true">
+            Sweets Included
+            </app-pricing-bullets>
+            <app-pricing-bullets [featured]="true">
+            3 Vend Gumball Machines(=9 Large Jars)
+            </app-pricing-bullets>
+            <app-pricing-bullets [featured]="true">
+            6 Additional Large Sweet Jars 
+            </app-pricing-bullets>
+            <app-pricing-bullets [featured]="true">
+           Sweet Bags 
+            </app-pricing-bullets>
+            <app-pricing-bullets [featured]="true">
+           Tongs
+            </app-pricing-bullets>
+            <app-pricing-bullets [featured]="true">
+           Decorations
+            </app-pricing-bullets>
+             <app-pricing-bullets [featured]="true">
+           Option to Add Wedding Colour into Decorations
+            </app-pricing-bullets>
+           </ul>
+           <button class="w-full py-3 px-6 rounded-full bg-tertiary text-on-tertiary font-button text-button hover:bg-tertiary/90 shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-tertiary/50 focus:ring-offset-2">
             Reserve Package
           </button>
-        </div>
-
+         </app-pricing-card>
         <!-- Platinum Package -->
-        <div class="bg-surface-bright rounded-xl border border-secondary/20 p-8 flex flex-col shadow-[0_10px_40px_-10px_rgba(152,165,138,0.15)] transition-transform duration-300 hover:-translate-y-1">
-          <div class="mb-6">
-            <h3 class="font-headline-md text-headline-md text-tertiary mb-xs">Platinum</h3>
-            <div class="flex items-baseline gap-1 mb-2">
-              <span class="font-display-lg text-display-lg text-on-surface">$2,200</span>
-            </div>
-            <p class="font-body-md text-body-md text-on-surface-variant h-12">The ultimate bespoke confectionery installation for grand events.</p>
-          </div>
-          <div class="h-px w-full bg-outline-variant/30 mb-6"></div>
-          <ul class="flex flex-col gap-4 mb-8 flex-grow">
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-secondary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">Multiple Carts or Grand Wall Display</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-secondary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">10+ Sweet Selections &amp; Custom Cakes</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-secondary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">Full Thematic Set Design</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-secondary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">Serves 250+ Guests</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-secondary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">Full Duration Event Staffing</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <app-icon name="check_circle" filled class="text-secondary text-[20px] mt-0.5" />
-              <span class="font-body-md text-body-md text-on-surface">Custom Branded Confectionery</span>
-            </li>
-          </ul>
-          <button class="w-full py-3 px-6 rounded-full border border-secondary text-secondary font-button text-button hover:bg-secondary/5 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary/50">
+          <app-pricing-card>
+          <app-pricing-card-title title="Platinum" price="£200+" description="The ultimate bespoke confectionery installation for your perfect day" />
+           <ul class="flex flex-col gap-4 mb-8 flex-grow">
+            <app-pricing-bullets>
+            Sweets Included
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+            Additional Sweets to match dietary requirements (Vegan, Low sugar etc.) 
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+            3 Vend Gumball Machines(=9 Large Jars)
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+            3 Medium Sweet Jars 
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+            6 Additional Large Sweet Jars 
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+           Sweet Bags 
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+           Tongs
+            </app-pricing-bullets>
+            <app-pricing-bullets>
+           Decorations
+            </app-pricing-bullets>
+             <app-pricing-bullets>
+           Full Thematic Set Design
+            </app-pricing-bullets>
+           </ul>
+           <button class="w-full py-3 px-6 rounded-full border border-secondary text-secondary font-button text-button hover:bg-secondary/5 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary/50">
             Request Consultation
           </button>
-        </div>
+         </app-pricing-card>
       </div>
     </section>
 
@@ -182,7 +197,7 @@
         Need something specific? We offer a la carte options including custom backdrops, specialized dietary menus, and midnight snack services.
       </p>
       <button class="inline-flex items-center gap-2 text-tertiary font-button text-button hover:underline decoration-tertiary/50 underline-offset-4">
-        View A La Carte Menu <app-icon name="arrow_forward" class="text-[18px]" />
+       Contact Us <app-icon name="arrow_forward" class="text-[18px]" />
       </button>
     </section>
   </main>

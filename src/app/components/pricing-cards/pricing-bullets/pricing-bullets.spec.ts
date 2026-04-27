@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Icon } from './icon';
+import { PricingBullets } from './pricing-bullets';
 
-describe('Icon', () => {
-  let component: Icon;
-  let fixture: ComponentFixture<Icon>;
+describe('PricingBullets', () => {
+  let component: PricingBullets;
+  let fixture: ComponentFixture<PricingBullets>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Icon]
+      imports: [PricingBullets]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Icon);
+    fixture = TestBed.createComponent(PricingBullets);
     component = fixture.componentInstance;
-    fixture.componentRef.setInput('name', 'arrow_forward');
     await fixture.whenStable();
   });
 

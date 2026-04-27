@@ -1,28 +1,142 @@
 # SweetStall
 
-## Initial setup
+## Prerequisites
+
+Install [Node.js](https://nodejs.org/) (LTS version) if you don't have it already. You can check by running:
+
+```sh
+node -v
+```
+
+## 1. Clone the repo
+
+```sh
+git clone <repo-url>
+cd sweet-stall
+```
+
+## 2. Install dependencies
+
+```sh
+npm install
+```
+
+## 3. Create your .env file
+
+At the root of the project, rename `.env.txt` to `.env`:
 
 ```
-npm run install
+.env
 ```
-## Firebase setup
 
-we need to set up hosting and storage for the project,
+This file holds your secret keys — never share it or commit it to git. We'll fill in the values in the steps below.
 
-go to [Firebase Console](https://console.firebase.google.com/) create and account, signin and set up the pay as you go Blaze account. 5GB of store is free and 1GB can be downloaded per day, images are intelligently cached so the user should not be downloading the same image again anytime soon so this keeps things light.
-
-360MB data transfer per day is free, the Angular app at the time of writing is 400kb in size, therefore 900 unique visitors can access the site for free per day, if they try to access the site again, they will receive a stored version that doesn't hit the main server. 
-
-Create a new project ie gumball-goodieshire
-
-update .firebaserc and change candy-cart to gumball-goodieshire
+The finished file will look like this:
 
 ```
+WEB3FORMS_ACCESS_KEY=your-key-here
+FIREBASE_STORAGE_BUCKET=your-project.firebasestorage.app
+IMAGE_CACHE_MAX_AGE=86400
+GOOGLE_APPLICATION_CREDENTIALS=./service-account.json
+```
+
+`IMAGE_CACHE_MAX_AGE` controls how long browsers cache images (in seconds). `86400` = 1 day, which is a sensible default.
+
+## 4. Web3Forms
+
+Sign up at https://app.web3forms.com/dashboard, go to **Form Setup**, and copy your Form Access Key. It looks like:
+
+```
+3a596a32-f8fa-4b1f-b3b9-958283dd6897457
+```
+
+Add it to your `.env` file:
+
+```
+WEB3FORMS_ACCESS_KEY=3a596a32-f8fa-4b1f-b3b9-958283dd6897457
+```
+
+## 5. Firebase setup
+
+We need Firebase for hosting (serving the website) and storage (storing images).
+
+### Create a Firebase project
+
+1. Go to [Firebase Console](https://console.firebase.google.com/) and create an account.
+2. Click **Add project** and give it a name (e.g. `gumball-goodieshire`).
+3. Upgrade to the **Blaze (pay as you go)** plan — 5 GB storage and 1 GB/day downloads are free. The Angular app is ~400 KB, so ~900 unique visitors/day are covered by the free tier. Repeat visitors are served from their browser cache and don't count against the limit.
+
+### Enable Firebase Storage
+
+1. In the Firebase Console, go to **Build → Storage** and click **Get started**.
+2. Accept the default rules and choose a storage location.
+3. Once enabled, your bucket name will appear — it looks like `gumball-goodieshire.firebasestorage.app`.
+
+Add it to your `.env`:
+
+```
+FIREBASE_STORAGE_BUCKET=gumball-goodieshire.firebasestorage.app
+```
+
+### Install Firebase tools and log in
+
+```sh
+npm install -g firebase-tools
+```
+
+```sh
+firebase login
+```
+
+### Initialise Firebase in the project
+
+```sh
 firebase init
 ```
 
+When prompted, use the arrow keys and spacebar to select the following features:
 
-## Image sync
+- **Hosting: Configure files for Firebase Hosting**
+- **Storage: Configure a Security Rules file for Cloud Storage**
+
+Then:
+
+- Choose **Use an existing project** and select the project you just created.
+- Accept the defaults for all other prompts (press Enter).
+
+After init, open `.firebaserc` and update the project name from `candy-cart` to your project name (e.g. `gumball-goodieshire`).
+
+### Add the service account key
+
+This allows the image upload scripts to talk to Firebase on your behalf.
+
+1. Firebase Console → **Project Settings** (gear icon) → **Service accounts**.
+2. Select **Node.js** and click **Generate new private key** → download the file.
+3. Rename the downloaded file to `service-account.json` and place it in the root of the project next to `package.json`.
+
+```
+service-account.json
+```
+
+`service-account.json` is already in `.gitignore` — never commit it.
+
+Add the following to your `.env`:
+
+```
+GOOGLE_APPLICATION_CREDENTIALS=./service-account.json
+```
+
+## 6. Run the site locally
+
+Start the dev server:
+
+```sh
+npx nx serve sweet-stall
+```
+
+Open your browser and go to `http://localhost:4200`.
+
+## 7. Image sync
 
 Drop source images (JPEG, PNG, etc.) into the `images/` folder, then run:
 
@@ -42,122 +156,10 @@ npm run compress-images   # compress only
 npm run upload-images     # upload + regenerate service only
 ```
 
-### One-time setup
+## 8. Deployment
 
-Add the following to your `.env` (create it in the project root if it doesn't exist):
-
-```env
-FIREBASE_STORAGE_BUCKET=candy-cart.firebasestorage.app
-```
-
-Then provide Firebase credentials using **one** of these options:
-
-| Option | How |
-|---|---|
-| Service account file | Download a key from Firebase Console → Project Settings → Service Accounts → Generate new private key. Save it as `service-account.json` in the project root. |
-| Environment variable | Set `GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/key.json` in `.env`. |
-| Application Default Credentials | Run `gcloud auth application-default login` once. |
-
-`service-account.json` is already in `.gitignore` — never commit it.
-
----
-
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
-
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
-
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
-
-## Run tasks
-
-To run the dev server for your app, use:
+One command to run tests, lint, build, deploy, and sync images. The checks ensure there are no errors before anything goes live.
 
 ```sh
-npx nx serve sweet-stall
+npm run deploy
 ```
-
-To create a production bundle:
-
-```sh
-npx nx build sweet-stall
-```
-
-To see all available targets to run for a project, run:
-
-```sh
-npx nx show project sweet-stall
-```
-
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
-
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Add new projects
-
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
-
-Use the plugin's generator to create new projects.
-
-To generate a new application, use:
-
-```sh
-npx nx g @nx/angular:app demo
-```
-
-To generate a new library, use:
-
-```sh
-npx nx g @nx/angular:lib mylib
-```
-
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
-
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Set up CI!
-
-### Step 1
-
-To connect to Nx Cloud, run the following command:
-
-```sh
-npx nx connect
-```
-
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
-
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-### Step 2
-
-Use the following command to configure a CI workflow for your workspace:
-
-```sh
-npx nx g ci-workflow
-```
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/angular-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)

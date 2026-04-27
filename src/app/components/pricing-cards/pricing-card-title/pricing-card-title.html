@@ -1,0 +1,23 @@
+   @let $featured = featured();
+   @let $title = title();
+   @let $description = description();
+   @let $price = price();
+   <div class="mb-6 mt-2"[class.mt-2]="$featured">
+            <h3 class="font-headline-md text-headline-md text-tertiary mb-xs">{{$title}}</h3>
+            <div class="flex items-baseline gap-1 mb-2">
+              <span class="font-display-lg text-display-lg text-on-surface">{{$price}}</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant h-12"> {{$description}}</p>
+          </div>
+
+          @if($featured) {
+             <div class="h-px w-full bg-tertiary/20 mb-6"></div>
+          }
+          @else {
+             <div class="h-px w-full bg-outline-variant/30 mb-6"></div>
+          }
+         
+
+
+
+                

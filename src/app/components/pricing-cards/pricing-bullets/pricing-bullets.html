@@ -1,0 +1,11 @@
+  @let $featured = featured();
+  @let $greyedBulletPoint = greyed();
+
+  <li [class]="$greyedBulletPoint ? 'flex items-start gap-3 opacity-40' : 'flex items-start gap-3'">
+    @if ($greyedBulletPoint) {
+      <app-icon name="close" class="text-outline text-[20px] mt-0.5" />
+    } @else {
+      <app-icon name="check_circle" filled [class]="$featured ? 'text-tertiary text-[20px] mt-0.5' : 'text-secondary text-[20px] mt-0.5'" />
+    }
+    <span [class]="$greyedBulletPoint ? 'font-body-md text-body-md text-on-surface-variant' : 'font-body-md text-body-md text-on-surface'"><ng-content /></span>
+  </li>

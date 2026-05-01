@@ -7,9 +7,14 @@ import { provideHttpClient } from '@angular/common/http';
 import { appRoutes } from './app.routes';
 import { environment } from '../environments/environment';
 import { WEB3FORMS_ACCESS_KEY } from './tokens/web3forms.token';
+import {
+  provideClientHydration,
+  withEventReplay,
+} from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideClientHydration(withEventReplay()),
     provideBrowserGlobalErrorListeners(),
     provideRouter(appRoutes),
     provideHttpClient(),

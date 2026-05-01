@@ -14,6 +14,7 @@ import {
 import { Icon } from '../../components/icon/icon';
 import { ImageService } from '../../services/image.service';
 import { RouterLink } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 
 interface CtaModel {
   name: string;
@@ -31,6 +32,8 @@ const EMPTY: CtaModel = { name: '', email: '', date: '' };
 export class Home {
   private readonly contact = inject(ContactService);
   readonly images = inject(ImageService);
+  readonly title = inject(Title).setTitle('Gummbal & Goodies Wedding Sweet Cart Home Page');
+  readonly description = inject(Meta).updateTag({name: 'description', content: 'Elevate your celebration with our bespoke sweet carts. Artisanal treats, elegantly styled to complement your wedding aesthetic, creating unforgettable moments of professional joy.'})
 
   protected readonly model = signal<CtaModel>({ ...EMPTY });
   protected readonly ctaForm = form(this.model, (path) => {

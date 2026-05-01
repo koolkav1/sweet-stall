@@ -1,0 +1,12 @@
+# Allow all crawlers to access the entire site
+User-agent: *
+Allow: /
+
+# Disallow private or protected routes
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /reset-password/
+
+# Host-specific sitemap (Change this to your actual domain)
+Sitemap: https://candy-cart.web.app//sitemap.xml

@@ -1,0 +1,40 @@
+ @let totalSlidesV = totalSlides();
+ <!-- Carousel Module -->
+      <div class="relative group">
+        <!-- Carousel Scroll Wrapper -->
+        <div #journeyCarousel class="carousel-container flex overflow-x-auto snap-x snap-mandatory gap-gutter pb-md -mx-4 px-4" style="scrollbar-width: none; -ms-overflow-style: none;">
+            <ng-content />
+
+
+
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button
+          (click)="prev()"
+          class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-8 bg-white/80 hover:bg-white text-primary p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 z-10"
+          [class.!opacity-0]="activeSlide() === 0"
+          aria-label="Previous slide"
+        >
+          <app-icon name="chevron_left" class="text-3xl" />
+        </button>
+        <button
+          (click)="next()"
+          class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-8 bg-white/80 hover:bg-white text-primary p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 z-10"
+          [class.!opacity-0]="activeSlide() === totalSlidesV - 1"
+          aria-label="Next slide"
+        >
+          <app-icon name="chevron_right" class="text-3xl" />
+        </button>
+
+        <!-- Dot Indicators -->
+        <div class="flex justify-center gap-2 mt-md">
+          @for (i of slides; track i) {
+            <button
+              (click)="scrollToSlide(i)"
+              [class]="'h-2 rounded-full transition-all duration-300 ' + (activeSlide() === i ? 'w-6 bg-primary' : 'w-2 bg-stone-300')"
+              [attr.aria-label]="'Go to slide ' + (i + 1)"
+            ></button>
+          }
+        </div>
+      </div>

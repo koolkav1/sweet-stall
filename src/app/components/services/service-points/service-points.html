@@ -1,0 +1,12 @@
+@let titleV = title();
+@let descriptionV = description();           
+            <div class="flex gap-md">
+              <div class="text-tertiary p-3 bg-tertiary-container/30 rounded-full h-fit w-fit">
+                <ng-content select="[icon]"></ng-content>
+                <app-icon name="palette" class="text-3xl" />
+              </div>
+              <div>
+                <h4 class="text-headline-md font-headline-md text-secondary mb-xs">{{titleV}}</h4>
+                <p class="text-body-md font-body-md text-on-surface-variant">{{descriptionV}}</p>
+              </div>
+            </div>

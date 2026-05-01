@@ -1,0 +1,15 @@
+@let slideNumberV = slideNumber();
+@let slideTitleV = slideTitle();
+@let slideDescriptionV = slideDescription();
+<div class="group/card bg-surface-container-lowest p-md rounded-xl ghost-border custom-shadow transition-all hover:-translate-y-1 h-full">
+  <div class="aspect-[4/5] rounded-lg overflow-hidden mb-md">
+    <ng-content select="[slide-image]"/>
+  </div>
+  <div class="flex items-start gap-4">
+    <span class="text-headline-md font-headline-md text-tertiary opacity-30 italic">0{{ slideNumberV}}</span>
+    <div>
+      <h3 class="text-headline-md font-headline-md text-primary mb-xs">{{slideTitleV}}</h3>
+      <p class="text-body-md font-body-md text-on-surface-variant">{{slideDescriptionV}}</p>
+    </div>
+  </div>
+</div>

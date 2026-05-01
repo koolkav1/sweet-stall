@@ -1,0 +1,29 @@
+  @let hasImageV = hasImage();
+  <section class="py-xl tonal-shift-bg">
+    <div class="max-w-[1200px] mx-auto px-8">
+      <div class="flex flex-col lg:flex-row gap-lg items-center">
+        <div class="lg:w-1/2">
+         <ng-content select="[service-title]"></ng-content>
+          <div class="space-y-lg">
+            <ng-content select="[service-points]"></ng-content>
+          </div>
+        </div>
+        <div class="lg:w-1/2 relative">
+          <div class="aspect-square rounded-full overflow-hidden border-[12px] border-surface-container-lowest shadow-xl">
+            <ng-content select="[service-image]" />
+            @if(!hasImageV){
+                <img
+              alt="Elegant outdoor wedding reception with white linens, crystal glassware, and soft green foliage decor in late afternoon sun"
+            appImageCover
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZhRB9r1U6pBIdKEKTGe-46Etx5oSax-c5xR6TfQJCZqCSltABFANlpmTYR6qaSEwvIwjrjNBfvN0OpbOzb1b84-tQIC1S7coHiGLsDmQSO2assRXLlfJyrPyLmIgd-VtfevhEIJTvEetDHb6z1ayDsyR6kaqHvvaruqKEJXtmFBCRPR88Az_o6Yb57wPSloYrn3f-yo4I6ab7jgBc8HSoW9-LjBeZ0H1A0Psmmx6MU8cE4WJZP4-hqGqS2aD5ZgeWwtZlAW_aIA4"
+            />
+            }
+            
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-primary-container p-6 rounded-xl custom-shadow max-w-[240px]">
+            <ng-content select="[testimonial]"></ng-content>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

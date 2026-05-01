@@ -9,7 +9,8 @@
     "compress-images": "tsx scripts/compress-images.ts",
     "upload-images": "tsx scripts/upload-images.ts",
     "sync-images": "npm run compress-images && npm run upload-images",
-    "deploy": "npx nx run sweet-stall:test --watch=false && npx nx run sweet-stall:lint && npx nx run sweet-stall:build --configuration=production && firebase deploy && npm run sync-images"
+    "generate-seo": "tsx scripts/generate-seo.ts",
+    "deploy": "npx nx run sweet-stall:test --watch=false && npx nx run sweet-stall:lint && npm run generate-seo && npx nx run sweet-stall:build --configuration=production && npm run sync-images && firebase deploy"
   },
   "private": true,
   "dependencies": {

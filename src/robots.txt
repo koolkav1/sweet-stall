@@ -1,6 +1,13 @@
-# Allow all crawlers to access the entire site
+# Allow all crawlers
 User-agent: *
-Allow: /
+
+# Explicitly allow all app routes
+Allow: /sweet-cart-goodies-hull
+Allow: /about-goodies-sweet-cart-hull
+Allow: /faq-and-testimonials-goodies-sweet-cart-hull
+Allow: /sweet-cart-hull-pricing
+Allow: /wedding-sweets-hull
+Allow: /contact-goodies-sweet-cart-hull
 
 # Disallow private or protected routes
 Disallow: /admin/
@@ -8,5 +15,5 @@ Disallow: /dashboard/
 Disallow: /login/
 Disallow: /reset-password/
 
-# Host-specific sitemap (Change this to your actual domain)
-Sitemap: https://candy-cart.web.app//sitemap.xml
+# Sitemap
+Sitemap: https://candy-cart.web.app/sitemap.xml

@@ -3,11 +3,12 @@ import { Injectable } from "@angular/core";
 @Injectable({ providedIn: 'root' })
 export class SiteService {
     routes = [
-        { label: 'Home', path: 'sweet-cart-goodies-hull' },
-        { label: 'About', path: 'about-goodies-sweet-cart-hull' },
-        { label: 'Pricing', path: 'sweet-cart-hull-pricing' },
-        { label: 'FAQ', path: 'faq-and-testimonials-goodies-sweet-cart-hull' },
-        { label: 'Contact', path: 'contact-goodies-sweet-cart-hull' },
-        { label: 'Weddings', path: 'wedding-sweets-hull' },
+        { label: 'Home', path: 'home' },
+        { label: 'About', path: 'about' },
+        { label: 'Pricing', path: 'pricing' },
+        { label: 'FAQ', path: 'faq-and-testimonials' },
+       { label: 'Parties', path: 'parties' },
+        { label: 'Weddings', path: 'weddings' },
+         { label: 'Contact', path: 'contact' },
     ];
 }

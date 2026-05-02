@@ -57,23 +57,23 @@
 
   <!-- Wedding Services Section -->
    <app-services-section>
-     <h2 serviceTitle appAccentTitle>Wedding Services</h2>
-       <app-service-points #servicePoints
+     <h2 service-title appAccentTitle>Wedding Services</h2>
+       <app-service-points service-points
             title="Bespoke Styling" 
             description="We tailor every detail of our carts and machines to match your wedding theme, from florals to custom decals.">
-             <app-icon #icon name="palette" class="text-3xl" />
+             <app-icon icon name="palette" class="text-3xl" />
         </app-service-points>
-        <app-service-points #servicePoints
+        <app-service-points service-points
             title="Custom Flavor Menus" 
-            description="Curate a menu of artisanal sweets that reflect your story, including gluten-free and vegan options.">
-             <app-icon #icon name="restaurant_menu" class="text-3xl" />
-        </app-service-points>
-        <app-service-points #servicePoints
-            title="On-Site Attendance" 
             description="Curate a menu of artisanal sweets that reflect your story, including gluten-free and vegan options from £1 per person.">
-             <app-icon #icon name="concierge" class="text-3xl" />
+             <app-icon icon name="restaurant_menu" class="text-3xl" />
         </app-service-points>
-          <img #serviceImage
+        <app-service-points service-points
+            title="Details" 
+            description="Each guest will receive an individual gift box, containing instructions and 2 tokens on a bow. The tokens give each guest 2 spins to collect their wedding favours!">
+             <app-icon icon name="concierge" class="text-3xl" />
+        </app-service-points>
+          <img service-image
               alt="Elegant outdoor wedding reception with white linens, crystal glassware, and soft green foliage decor in late afternoon sun"
             appImageCover
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZhRB9r1U6pBIdKEKTGe-46Etx5oSax-c5xR6TfQJCZqCSltABFANlpmTYR6qaSEwvIwjrjNBfvN0OpbOzb1b84-tQIC1S7coHiGLsDmQSO2assRXLlfJyrPyLmIgd-VtfevhEIJTvEetDHb6z1ayDsyR6kaqHvvaruqKEJXtmFBCRPR88Az_o6Yb57wPSloYrn3f-yo4I6ab7jgBc8HSoW9-LjBeZ0H1A0Psmmx6MU8cE4WJZP4-hqGqS2aD5ZgeWwtZlAW_aIA4"
@@ -128,7 +128,7 @@
       <h2 appAccentTitle>Ready to add a twist of joy?</h2>
       <p class="text-body-lg font-body-lg text-on-primary-container mb-lg">Book a consultation today to design your dream wedding favors and cart experience.</p>
       <div class="flex flex-col sm:flex-row gap-md justify-center">
-        <a [routerLink]="'/contact-goodies-sweet-cart-hull'" class="inline-flex items-center justify-center bg-tertiary text-on-tertiary px-lg py-3 rounded-full font-button text-button hover:shadow-lg transition-all">Book Now</a>
+        <a [routerLink]="'/contact'" class="inline-flex items-center justify-center bg-tertiary text-on-tertiary px-lg py-3 rounded-full font-button text-button hover:shadow-lg transition-all">Book Now</a>
         
       </div>
     </div>

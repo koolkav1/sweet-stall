@@ -1,1 +1,138 @@
-<p>parties works!</p>
+<main class="pt-20 flex-grow">
+
+  <!-- Hero Journey Carousel Section -->
+  <section class="py-xl bg-surface relative">
+    <div class="max-w-[1200px] mx-auto px-8">
+      <div class="text-center mb-lg">
+        <span class="text-label-md font-label-md text-secondary tracking-widest uppercase mb-xs block">Experience the Delight</span>
+        <h1 appAccentTitle >Childrens Birthday Package</h1>
+        <p class="max-w-2xl mx-auto text-body-lg font-body-lg text-on-surface-variant">Give your guests a fun and interactive activity to do on your big day that is completely unique! We can reserve one of the gumball machines as your wedding favour dispenser, filled with premium sweets
+</p>
+      </div>
+
+      <!-- Carousel Module -->
+      <app-carousel [totalSlides]="5">
+                  <app-carousel-slide [slideNumber]="1" slideTitle="Unwrap the Magic" slideDescription="Each guest receives a gift box containing 2 golden tokens, and a scroll" >
+            <img slide-image
+                  alt="Close-up of a delicate white lace gift box being opened by hands with soft manicured nails, warm natural light"
+                  class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-700"
+                  [src]="imageService.images['sweet-cart-hull-close-up-childrens-party-notepad-pencils.webp']"
+                />
+          </app-carousel-slide>
+
+          <app-carousel-slide [slideNumber]="2" slideTitle="Share a Smile" slideDescription="Guests open the scroll and read the instructions">
+            <img slide-image
+                  alt="A small artistic card with elegant calligraphy showing a romantic quote, resting on a table decorated with blush rose petals"
+                  class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-700"
+                  [src]="imageService.images['IMG_20260415_223821.webp']"
+                />
+          </app-carousel-slide>
+
+          <app-carousel-slide [slideNumber]="3" slideTitle="Find Your Token" slideDescription="Guests untie the bow and collect their golden tokens">
+            <img slide-image
+                  alt="Hand holding a custom engraved gold token with the couple's initials, softly blurred wedding reception background"
+                  class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-700"
+                  [src]="imageService.images['IMG_20260415_223832.webp']"
+                />
+          </app-carousel-slide>
+
+          <app-carousel-slide [slideNumber]="4" slideTitle="Twist for a Treat" slideDescription="Guests put the tokens in the coin slot for the reserved gumball machine, filled with premium sweets.">
+            <img slide-image
+                  alt="A vintage ivory and gold gumball machine filled with colorful artisanal sweets, standing on a white linen tablecloth"
+                  class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-700"
+                 [src]="imageService.images['IMG_20260415_223929-rotated.webp']"
+                />
+          </app-carousel-slide>
+
+          <app-carousel-slide [slideNumber]="5" slideTitle="Capture the Moment" slideDescription="Guests turn the handle and collect the sweets in the gift boxes provide and enjoy straight away or to take home with them!">
+            <img slide-image
+                  alt="A group of wedding guests laughing and taking photos with a beautifully styled vintage sweet cart adorned with flowers"
+                  class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-700"
+                  [src]="imageService.images['IMG_20260423_194838.webp']"
+                />
+          </app-carousel-slide>
+      </app-carousel>
+    </div>
+  </section>
+
+  <!-- Wedding Services Section -->
+   <app-services-section>
+     <h2 service-title appAccentTitle>Wedding Services</h2>
+       <app-service-points service-points
+            title="Bespoke Styling" 
+            description="We tailor every detail of our carts and machines to match your wedding theme, from florals to custom decals.">
+             <app-icon icon name="palette" class="text-3xl" />
+        </app-service-points>
+        <app-service-points service-points
+            title="Custom Flavor Menus" 
+            description="Curate a menu of artisanal sweets that reflect your story, including gluten-free and vegan options from £1 per person.">
+             <app-icon icon name="restaurant_menu" class="text-3xl" />
+        </app-service-points>
+        <app-service-points service-points
+            title="Details" 
+            description="Each guest will receive an individual gift box, containing instructions and 2 tokens on a bow. The tokens give each guest 2 spins to collect their wedding favours!">
+             <app-icon icon name="concierge" class="text-3xl" />
+        </app-service-points>
+          <img service-image
+              alt="Elegant outdoor wedding reception with white linens, crystal glassware, and soft green foliage decor in late afternoon sun"
+            appImageCover
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZhRB9r1U6pBIdKEKTGe-46Etx5oSax-c5xR6TfQJCZqCSltABFANlpmTYR6qaSEwvIwjrjNBfvN0OpbOzb1b84-tQIC1S7coHiGLsDmQSO2assRXLlfJyrPyLmIgd-VtfevhEIJTvEetDHb6z1ayDsyR6kaqHvvaruqKEJXtmFBCRPR88Az_o6Yb57wPSloYrn3f-yo4I6ab7jgBc8HSoW9-LjBeZ0H1A0Psmmx6MU8cE4WJZP4-hqGqS2aD5ZgeWwtZlAW_aIA4"
+            />
+      <p testimonial class="font-serif italic text-on-primary-container text-body-md">"The highlight of our reception. Our guests are still talking about the gumball machine months later!"</p>
+            <p testimonial class="mt-xs text-label-md font-label-md text-primary">— Sarah &amp; Mark</p>      
+   </app-services-section>
+
+  <!-- Gallery of Love Section -->
+  <section class="py-xl">
+    <div class="max-w-[1200px] mx-auto px-8">
+      <div class="text-center mb-lg">
+        <h2 class="text-display-lg font-display-lg text-primary mb-xs">Gallery of Love</h2>
+        <p class="text-body-lg font-body-lg text-on-surface-variant">Glimpses into our recent celebrations</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 h-[600px]">
+        <div class="col-span-2 row-span-2 rounded-xl overflow-hidden ghost-border">
+          <img
+            alt="A grand wedding sweet table featuring tiered cakes, jars of pastel candies, and ivory floral arrangements"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAId37X-XKphTiiU3pKVnyEFfpl8EYgDCRssfdXLNgd7ONiC02ckX6LFasyIb4ZQJyuBL3fP4SjZx9IMnJkXMmWhcRVeClqd_LrunnwH3WEpPk7K9dEyOMMKw9kTfa6qi70dpg9Dpk0LuBVdHe6FaLDMgTAopcnpblwcr18h55sQTYhVGgEX9ywVOahg_ifohj5QTJv8VmC-H0PSoVVHS1ZYbw9w_bTeonF5EoRse0d4vp-Dr3itLOTUMTICqrz0Pjdn7ndLtvdgKA"
+          />
+        </div>
+        <div class="col-span-1 row-span-1 rounded-xl overflow-hidden ghost-border">
+          <img
+            alt="Detailed shot of colorful macarons and glass jars filled with mints on a vintage mirrored tray"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR0PPIpJ8oL4q4JzPDzYd78VJk9s6_fzRxOpHOdLKVEqM22PO_xOMOd4iy0c3JZv08CMmHNFHdkXcg8xb4ZvV2Y2oYBh_OVYjGYgIgvI4eQUzB3SXU0BFMC_MUuLR5Zp4C_71iUN3RZFrtHpKpsWDApRBgmqYuO55NJH_dzQxIXz4Ed2lyLqtFDPQuslNoOrwFExN6xDSmDWEQehZuIWm31k5GSc011Q0Os1rQLR0fcTKShufMStwmI3uEj7920Dh-KqcxU1IxHsw"
+          />
+        </div>
+        <div class="col-span-1 row-span-1 rounded-xl overflow-hidden ghost-border">
+          <img
+            alt="Outdoor wedding aisle with pink flower petals and wooden chairs overlooking a lake at sunset"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOVzv4lNacfrutk5O7E2pNxWxLy4PfwUit1-9LOkb9PtsRnn935KYEOhK0DTMGWR7wHYxAGcLGLYRCNXstuGPia5RjPZlBEl_m-iC5yTuQVqkAg8hrevjqX3mEuQ5RsdOlDFtQjzHCkp7si-04stAhLFM6aI8UHHcTpAQxcaFIDYRms2uKS4jDTGzbRepiUQRlVhUtJww_V0DrbkLMThZCk0FIE_MIrs2Bo8INevzHLKqMO8syY-qCnmtyrvkG8lYKQ0iaHwS4LlA"
+          />
+        </div>
+        <div class="col-span-2 row-span-1 rounded-xl overflow-hidden ghost-border">
+          <img
+            alt="Wide shot of a beautifully lit wedding ballroom with multiple gumball machines and sweet carts strategically placed"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-yTR1o7U3LMRoJQrNxzgL859tGmP8d1_AdYhHLk1fx_ZnAz5_OG2x3AnqHeUpz2fmLJWYY__7r1yreaE2z1HAzgXIGnpCt6o__a-gc7KkikB5EIen-hcKDSBoGb8Rk_Iy0FANLnvdxgxnss4FRTWoZqQ-5qL5HX8CjQfrR3EtqCLI_l5RfmwkIitE4oRX0wiulpZoB7HKMRLfdV7FVkg7bV1YLGeiKuUzuaiwColpFwYgR4zM0Gn6jLk6SJfStP81guPAu5F53eU"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-xl bg-primary-container">
+    <div class="max-w-[800px] mx-auto px-8 text-center">
+      <h2 appAccentTitle>Ready to add a twist of joy?</h2>
+      <p class="text-body-lg font-body-lg text-on-primary-container mb-lg">Book a consultation today to design your dream wedding favors and cart experience.</p>
+      <div class="flex flex-col sm:flex-row gap-md justify-center">
+        <a [routerLink]="'/contact'" class="inline-flex items-center justify-center bg-tertiary text-on-tertiary px-lg py-3 rounded-full font-button text-button hover:shadow-lg transition-all">Book Now</a>
+        
+      </div>
+    </div>
+  </section>
+
+</main>
+

@@ -15,5 +15,12 @@ export class ImageService {
         'IMG_20260423_200406.webp':      'https://storage.googleapis.com/candy-cart.firebasestorage.app/images%2FIMG_20260423_200406.webp',
         'IMG_20260423_200508.webp':      'https://storage.googleapis.com/candy-cart.firebasestorage.app/images%2FIMG_20260423_200508.webp',
         'logo.webp':                     'https://storage.googleapis.com/candy-cart.firebasestorage.app/images%2Flogo.webp',
+        'sweet-cart-hull-childrens-party-decorations.webp':'https://storage.googleapis.com/candy-cart.firebasestorage.app/images%2Fsweet-cart-hull-childrens-party-decorations.webp',
+        'sweet-cart-hull-childrens-party-sweets-close-up.webp':'https://storage.googleapis.com/candy-cart.firebasestorage.app/images%2Fsweet-cart-hull-childrens-party-sweets-close-up.webp',
+        'sweet-cart-hull-close-up-childrens-party-emphasis-on-pencils.webp':'https://storage.googleapis.com/candy-cart.firebasestorage.app/images%2Fsweet-cart-hull-close-up-childrens-party-emphasis-on-pencils.webp',
+        'sweet-cart-hull-close-up-childrens-party-notepad-pencils.webp':'https://storage.googleapis.com/candy-cart.firebasestorage.app/images%2Fsweet-cart-hull-close-up-childrens-party-notepad-pencils.webp',
+        'sweet-cart-hull-close-up-childrens-party-top-down-view.webp':'https://storage.googleapis.com/candy-cart.firebasestorage.app/images%2Fsweet-cart-hull-close-up-childrens-party-top-down-view.webp',
+        'sweet-cart-hull-close-up-childrens-party.webp':'https://storage.googleapis.com/candy-cart.firebasestorage.app/images%2Fsweet-cart-hull-close-up-childrens-party.webp',
+        'sweet-cart-hull-close-up-different-angle-childrens-party.webp':'https://storage.googleapis.com/candy-cart.firebasestorage.app/images%2Fsweet-cart-hull-close-up-different-angle-childrens-party.webp',
     };
 }

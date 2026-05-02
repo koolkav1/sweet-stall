@@ -1,9 +1,9 @@
 import { Component, input } from '@angular/core';
-import { Icon } from '../../icon/icon';
+
 
 @Component({
   selector: 'app-service-points',
-  imports: [Icon],
+  imports: [],
   templateUrl: './service-points.html',
 })
 export class ServicePoints {

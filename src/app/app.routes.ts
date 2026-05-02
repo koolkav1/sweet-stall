@@ -2,33 +2,37 @@ import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
   {
-    path: 'sweet-cart-goodies-hull',
+    path: 'home',
     loadComponent: () => import('./pages/home/home').then(m => m.Home),
   },
   {
-    path: 'about-goodies-sweet-cart-hull',
+    path: 'about',
     loadComponent: () => import('./pages/about-us/about-us').then(m => m.AboutUs),
   },
   {
-    path: 'faq-and-testimonials-goodies-sweet-cart-hull',
+    path: 'faq-and-testimonials',
     loadComponent: () => import('./pages/faq/faq').then(m => m.Faq),
 
   },
   {
-    path: 'sweet-cart-hull-pricing',
+    path: 'pricing',
     loadComponent: () => import('./pages/pricing/pricing').then(m => m.Pricing),
   },
   {
-    path: 'wedding-sweets-hull',
+    path: 'weddings',
     loadComponent: () => import('./pages/weddings/weddings').then(m => m.Weddings)
   },
   {
-    path: 'contact-goodies-sweet-cart-hull',
+    path: 'contact',
     loadComponent: () => import('./pages/contact-us/contact-us').then(m => m.ContactUs)
+  },
+  {
+    path: 'parties',
+    loadComponent: () => import('./pages/parties/parties').then(m => m.Parties)
   },
   
   {
     path: '**',
-    redirectTo: 'sweet-cart-goodies-hull'
+    redirectTo: 'home'
   }
 ]
